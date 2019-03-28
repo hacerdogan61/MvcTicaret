@@ -1,0 +1,38 @@
+﻿@model OrganikTicaret.Entity.Products
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="container pt-5">
+
+<h2  class="text text-warning" >Delete</h2>
+<hr />
+<h3 class="text text-danger">Silmek İstediğinize Emin mi siniz?</h3>
+<div>
+    
+    <dl class="dl-horizontal">
+      
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+     
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-warning" /> |
+            @Html.ActionLink("Ürün Listesi", "Index",null,new {@class="btn btn-danger"})
+        </div>
+    }
+</div>
+</div>

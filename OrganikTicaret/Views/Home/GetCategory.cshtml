@@ -1,0 +1,39 @@
+﻿@using System.Activities.Statements
+@using System.Data.Entity.Infrastructure.Interception
+@model IEnumerable<OrganikTicaret.Entity.Category>
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+<button type="button" class="btn list-group-item list-group-item-action btn-warning">
+    <a class="text-success" href="/Home/List/" >
+        <i class="fas fa-chevron-right" style="font-size: 15px;"></i>
+        Tüm Kategoriler
+    </a>
+</button>
+<div class="list-group ">
+    @foreach (var item in Model)
+    {
+        if (selectedCategory!=null)
+        {
+            if (item.Id==int.Parse(selectedCategory.ToString()))
+            {
+                
+                    <a class="list-group-item bg-danger text-warning" href="/Home/List/@item.Id">@item.CategoryName</a>
+              
+            }
+            else
+            {
+                <a class="list-group-item text-warning" href="/Home/List/@item.Id">@item.CategoryName</a>
+            }
+
+        }
+        else
+        {
+            <a class="list-group-item  text-warning" href="/Home/List/@item.Id">@item.CategoryName</a>
+        }
+       
+    }
+   
+   
+    
+</div>

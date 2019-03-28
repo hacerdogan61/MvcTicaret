@@ -1,0 +1,48 @@
+﻿@model IEnumerable<OrganikTicaret.Entity.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="container pt-5">
+
+    <h2>Kategori Listesi</h2>
+    <hr/>
+    <p>
+        @Html.ActionLink("Yeni Kategori", "Create",null,new{@class="btn btn-warning"})
+    </p>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriptions)
+            </th>
+           
+            <th style="width: 200px;"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descriptions)
+                </td>
+               
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id=item.Id },new{@class="btn btn-warning"}) 
+                  
+                    @Html.ActionLink("Sil", "Delete", new { id=item.Id },new
+               {
+                   @class = "btn btn-danger"
+               })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -1,0 +1,36 @@
+.jumbotron{
+background-image: url(../img/mango.jpg);
+background-size: cover;
+height: 100%;
+}
+
+  
+  
+  #write-review{
+
+    margin-left:-50px;
+  }
+  #product-price{ 
+    font-size: 28px;
+    color: orange;
+  }
+.card-title{
+    font-size: 16px;
+    font-weight: 400px;
+    color:#484848;
+    line-height: 1.35em;
+    height: 34px;
+}
+.description {
+    font-size: 12px;
+    height: 40px;
+}
+.product-price{
+    color: #414141;
+    font-weight: 700;
+    font-size:17px;
+}
+#product-detail h1{
+    font-size: 20px;
+    font-weight: 700;
+}

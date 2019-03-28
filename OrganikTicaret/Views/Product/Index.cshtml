@@ -1,0 +1,84 @@
+﻿@model IEnumerable<OrganikTicaret.Entity.Products>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container pt-5">
+<h2>ÜRÜNLER</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ürün Ekle", "Create",null,new{@class="btn btn-danger"})
+</p>
+<table class="table table-bordered table-striped mb-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsHome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>
+        
+        <th style="width: 140px;"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="/Upload/@item.Image" style="width:70px;"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+
+        <td>
+            @if(item.IsHome==1){
+
+                <label class="badge badge-success" style="width: 50px"><i class="far fa-check-circle" style="font-size: 15px;"></i>Evet</label>
+            }
+            else
+            {
+                <label class="badge badge-danger" width: 50px><i class="far fa-check-circle" style="font-size: 15px;"></i>Hayır</label>
+            }
+        </td>
+        <td>
+            @if(item.IsApproved==1){
+
+                <label class="badge badge-success" width: 50px><i class="far fa-check-circle" style="font-size: 15px;"></i>Evet</label>
+            }
+            else
+            {
+                <label class="badge badge-danger" width: 50px><i class="far fa-check-circle" style="font-size: 15px;"></i>Hayır</label>
+            }
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new
+       {
+           @class = "btn btn-warning btn-sm"
+       }) 
+           
+            @Html.ActionLink("Delete", "Delete", new {id = item.Id}, new
+            {
+                @class = "btn btn-danger btn-sm"
+            }) 
+        </td>
+    </tr>
+}
+
+</table>
+</div>
