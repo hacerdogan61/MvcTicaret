@@ -1,5 +1,8 @@
-﻿using System;
+﻿using OrganikTicaret.Entity;
+using OrganikTicaret.Identitiy;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +16,8 @@ namespace OrganikTicaret
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            Database.SetInitializer(new DataInitilizer());
+            Database.SetInitializer(new IdentityInitilizer());
         }
     }
 }

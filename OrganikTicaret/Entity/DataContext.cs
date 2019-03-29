@@ -11,7 +11,7 @@ namespace OrganikTicaret.Entity
     {
         public DataContext():base("dataConnection")
         {
-            Database.SetInitializer(new DataInitilizer());
+        
         }
        public DbSet<Products> pro { get; set; }
        public DbSet<Category> cat  {get; set;}
