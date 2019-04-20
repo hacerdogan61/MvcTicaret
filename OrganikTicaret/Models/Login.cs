@@ -19,5 +19,6 @@ namespace OrganikTicaret.Models
         [DisplayName("Beni Hatırla")]
         public bool RememberMe { get; set; }
 
+
     }
 }

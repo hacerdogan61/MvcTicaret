@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrganikTicaret.Identitiy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -28,5 +29,6 @@ namespace OrganikTicaret.Models
         [DisplayName("Şifre Tekrarı")]
         [Compare("Password",ErrorMessage = "Girilen şifre ile uyuşmamaktadır")]
         public string RePassword { get; set; }
+        
     }
 }

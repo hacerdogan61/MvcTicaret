@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace OrganikTicaret.Identitiy
 {
-    public class IdentityInitilizer:CreateDatabaseIfNotExists<IdentityDataContext>
+    public class IdentityInitilizer:DropCreateDatabaseIfModelChanges<IdentityDataContext>
     {
         
             protected override void Seed(IdentityDataContext context)

@@ -1,16 +1,19 @@
 ﻿
 
 
-<ul class="navbar-nav  my-2 my-lg-0">
+<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block mt-2">
 
     @if (Request.IsAuthenticated)
     {
         //Kullanıcı giriş yaptıysa
-        <li class="nav-item active">
+        <li style="list-style-type: none;float: right">
             <a class="nav-link" href="/">@User.Identity.Name </a>
         </li>
-        <li class="nav-item">
+        <li style="list-style-type: none;float: right">
             <a class="nav-link" href="/Account/Logout/">Çıkış</a>
+        </li>
+        <li style="list-style-type: none;float: right">
+            <a class="nav-link" href="/Product/Index/">Yönetici Paneli</a>
         </li>
 
     }
@@ -19,14 +22,15 @@
     
         //Kullanıcı giriş yapmadıysa
         
-        <li class="nav-item active">
+        <li style="list-style-type: none;float: right">
             <a class="nav-link" href="/Account/Login/">Giriş </a>
         </li>
-        <li class="nav-item">
+        <li  style="list-style-type: none;float: right">
             <a class="nav-link" href="/Account/Register/">Register</a>
         </li>
 
     }
 
 </ul>
+
 

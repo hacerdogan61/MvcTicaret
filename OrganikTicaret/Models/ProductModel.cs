@@ -7,6 +7,8 @@ namespace OrganikTicaret.Models
 {
     public class ProductModel
     {
+
+
         public int Id
         {
             get; set;
@@ -16,6 +18,25 @@ namespace OrganikTicaret.Models
             get; set;
         }
         public string Description
+        {
+            get; set;
+        }
+       
+        public string ProductCode
+        {
+            get; set;
+        }
+   
+        public string DiametreandSize
+        {
+            get; set;
+        }
+      
+        public string OutputDirection
+        {
+            get; set;
+        }
+        public string OutputDiametre
         {
             get; set;
         }

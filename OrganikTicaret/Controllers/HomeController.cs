@@ -14,11 +14,15 @@ namespace OrganikTicaret.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var li = db.pro.Where(i=>i.IsApproved == 1 && i.IsHome==1).Select(i=>new ProductModel
+            var li = db.pro.Where(i=>i.IsApproved  && i.IsHome).Select(i=>new ProductModel
             {
                 Id = i.Id,
                 Name = i.Name.Length>20?i.Name.Substring(0,20)+"...":i.Name,
                 Description = i.Description.Length>50?i.Description.Substring(0,47)+"...":i.Description,
+                DiametreandSize = i.DiametreandSize,
+                OutputDiametre = i.OutputDiametre,
+                OutputDirection = i.OutputDirection,
+                ProductCode = i.ProductCode,
                 Image = i.Image??"mango.jpg",
                 CategoryId = i.CategoryId
              
@@ -32,11 +36,15 @@ namespace OrganikTicaret.Controllers
         public ActionResult List(int? id)
         {
 
-            var li = db.pro.Where(i => i.IsApproved == 1 ).Select(i => new ProductModel
+            var li = db.pro.Where(i => i.IsApproved ).Select(i => new ProductModel
             {
                 Id = i.Id,
                 Name = i.Name,
                 Description = i.Description.Length > 50 ? i.Description.Substring(0, 47) + "..." : i.Description,
+                DiametreandSize = i.DiametreandSize,
+                OutputDiametre = i.OutputDiametre,
+                ProductCode = i.ProductCode,
+                OutputDirection = i.OutputDirection,
                 Image = i.Image,
                 CategoryId = i.CategoryId
 

@@ -5,30 +5,33 @@
 <div class="row">
     @foreach (var urun in Model)
     {
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img class="card-img-top" src="/Upload/@urun.Image" alt="@urun.Name">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="/Home/Details/@urun.Id"> @urun.Name</a>
-                    </h4>
-                    <p class="card-text pt-2 description">
-                        @urun.Description
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted product-price ">
-                        <i class="fas fa-lira-sign " style="font-size: 20px;"></i>
-                        @urun.Price
-                    </small>
-                    <a href="/Home/Details/@urun.Id" class="btn btn-warning btn-sm float-right ">
 
-                        <i class="fas fa-chevron-right" style="font-size: 15px;"></i>
-                        Ürünü İncele
-                    
-                    </a>
+        
+        <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+                <figure>
+                    <img src="~/Upload/@urun.Image" alt="@urun.Name" class="img-fluid">
+                </figure>
+                <div class="px-4">
+                    <h3><a href="#">@urun.Name</a></h3>
+                    <div class="mb-3">
+                        <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                        <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                    </div>
+                    <p class="mb-1">@urun.Description </p>
+                    <p class="mb-1"><span>Çıkış ölçüsü:</span>  @urun.OutputDiametre </p>
+                    <p class="mb-1"><span>ölçüsü:</span>  @urun.DiametreandSize </p>
+                    <div>
+                        <a href="/Home/Details/@urun.Id" class="btn btn-black mr-1 rounded-0">Cart</a>
+                        <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                    </div>
                 </div>
             </div>
         </div>
     }
+</div>
+
+
+<div class="row">
+   
 </div>

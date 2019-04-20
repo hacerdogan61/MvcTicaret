@@ -34,11 +34,11 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-half-alt" aria-hidden="true"></i>
-                    @if (Model.IsApproved == 1)
+                    @if (Model.IsApproved )
                     {
                         <span class="badge badge-success">Stokta</span>
                     }
-                    @if (Model.IsApproved == 0)
+                    @if (Model.IsApproved == false)
                     {
                         <span class="badge badge-success">Stokta Yok</span>
                     }

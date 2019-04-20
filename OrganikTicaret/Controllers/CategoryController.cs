@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using OrganikTicaret.Entity;
 
 namespace OrganikTicaret.Controllers
-{
+{   [Authorize (Roles="admin")]
     public class CategoryController : Controller
     {
         private DataContext db = new DataContext();

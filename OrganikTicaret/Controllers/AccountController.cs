@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,7 +16,7 @@ namespace OrganikTicaret.Controllers
     {
         private UserManager<AppUser> UserManager;
         private RoleManager<AppRole> RoleManager;
-
+        IdentityDataContext db=new IdentityDataContext();
         public AccountController()
         {
             var userStore = new UserStore<AppUser>(new IdentityDataContext());
@@ -26,6 +27,12 @@ namespace OrganikTicaret.Controllers
 
         }
 
+        public ActionResult User()
+        {
+            var userInfo = db.Users.Include(l => l.Logins);
+            return View(userInfo.ToList());
+        }
+
         // GET: Account
         public ActionResult Register()
         {
@@ -34,7 +41,7 @@ namespace OrganikTicaret.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Register model)
+        public ActionResult Register(Register model ,string ReturnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -45,6 +52,7 @@ namespace OrganikTicaret.Controllers
                 user.SurName = model.surName;
                 user.Email = model.Email;
                 user.UserName = model.userName;
+               
 
                 var result = UserManager.Create(user, model.Password);
 
@@ -55,6 +63,10 @@ namespace OrganikTicaret.Controllers
                     {
                         UserManager.AddToRole(user.Id, "user");
                     }
+                    if (!String.IsNullOrEmpty(ReturnUrl))
+                    {
+                        return Redirect(ReturnUrl);
+                    }
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -63,6 +75,7 @@ namespace OrganikTicaret.Controllers
                 }
 
             }
+           
 
             return View(model);
         }

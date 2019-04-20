@@ -10,5 +10,7 @@ namespace OrganikTicaret.Identitiy
     {
         public string Name { get; set; }
         public string SurName { get; set; }
+        public AppRole role { get; set; }
+       
     }
 }

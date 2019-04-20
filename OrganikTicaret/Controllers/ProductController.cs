@@ -10,8 +10,9 @@ using OrganikTicaret.Entity;
 
 namespace OrganikTicaret.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ProductController : Controller
-    {
+    {   
         private DataContext db = new DataContext();
 
         // GET: Product
@@ -48,7 +49,7 @@ namespace OrganikTicaret.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,Price,Stock,Image,IsHome,IsApproved,CategoryId,IsDelete")] Products products)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,ProductCode,DiametreandSize,OutputDirection,OutputDiametre,Price,Stock,Image,IsHome,IsApproved,CategoryId,IsDelete")] Products products)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +83,7 @@ namespace OrganikTicaret.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,Stock,Image,IsHome,IsApproved,CategoryId,IsDelete")] Products products)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,ProductCode,DiametreandSize,OutputDirection,OutputDiametre,Price,Stock,Image,IsHome,IsApproved,CategoryId,IsDelete")] Products products)
         {
             if (ModelState.IsValid)
             {

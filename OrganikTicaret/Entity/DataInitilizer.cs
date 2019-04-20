@@ -12,10 +12,8 @@ namespace OrganikTicaret.Entity
         {
             var kategori=new List<Category>()
             {
-                new Category(){CategoryName = "Armut",Descriptions = "Organik Meyve"},
-                new Category(){CategoryName = "Salatalık",Descriptions = "Organik Sebze"},
-                new Category(){CategoryName = "Bal",Descriptions = "Organik Ürün"},
-                new Category(){CategoryName = "Süt",Descriptions = "Organik Süt"}
+                new Category(){CategoryName = "Duş Başlıkları",Descriptions = "Duş Başlığı"},
+                new Category(){CategoryName = "Duş Süzgeçleri",Descriptions = "Duş Süzgeçleri"},
 
 
 
@@ -28,13 +26,13 @@ namespace OrganikTicaret.Entity
 
             var uruList = new List<Products>()
             {
-                new Products(){ Name = "Organik Muz",Description = "Muz yüksek mineral içeriği ile faydalı bir besindir. Potasyum, manganez, C ve B6 vitaminleriyle doludur.", Price =15 , Stock =500 , IsApproved =1 , CategoryId = 1,IsHome = 1,Image ="mango.jpg"},
-                new Products(){ Name = "Organik Portakal",Description = "Portakal C vitamin deposudur. Vücudun bağışıklık sistemini güçlendirir ve enerji verir. İster meyve olarak yiyin, isterseniz suyunu sıkıp ailece için. City Farm Organik Portakal, tamamen karpitsiz, filesinde, taze ve mevsiminde.", Price =1200 , Stock =500 , IsApproved =1 , CategoryId = 1,IsHome = 1,Image ="mango.jpg"},
-                new Products(){ Name = "Organik Limon",Description = "Bir mutfağın vazgeçilmezlerinden biri: C vitamini deposu, City Farm Organik Limon. Filesinde, sizler için dalından koparıldığı tazelikte.", Price =1200 , Stock =500 , IsApproved =1 , CategoryId = 1,IsHome = 1,Image ="mango.jpg"},
-                new Products(){ Name = " Organik Elma Sirkesi.",Description = "Salatalarınıza ve diğer gıdalarınıza City Farm Organik Elma Sirkesiyle farklı bir tat ekleyin.", Price =1200 , Stock =500 , IsApproved =1 , CategoryId = 1,IsHome = 1,Image ="mango.jpg"},
-                new Products(){ Name = "Organik Domates Salçası 660 gr.",Description = "Organik Domates Salçası ile yemeklerinize yeni bir boyut ekleyin.Organik Domates.", Price =1200 , Stock =500 , IsApproved =1, IsHome = 1,CategoryId = 1,Image ="mango.jpg"},
+                new Products(){ Name = "Duş Başlığı",ProductCode = "MIKS 660.360.33",Description = "Klasik Seri Plastik Duş Kanalı 360° Dirsek", DiametreandSize = "33 cm",OutputDirection = "Yan/Alt",OutputDiametre = "Q50",Price =26.00 , Stock =25 , IsApproved =true , CategoryId = 3,IsHome =true,Image ="mango.jpg"},
+                new Products(){ Name = "Duş Başlığı",ProductCode = "MIKS 660.360.40",Description = "Klasik Seri Plastik Duş Kanalı 360° Dirsek", DiametreandSize = "40 cm",OutputDirection = "Yan/Alt",OutputDiametre = "Q50",Price =28.00 , Stock =25 , IsApproved =true , CategoryId= 3,IsHome = true,Image =""},
+                new Products(){ Name = "Duş Başlığı",ProductCode = "MIKS 660.360.50",Description = "Klasik Seri Plastik Duş Kanalı 360° Dirsek", DiametreandSize = "50 cm",OutputDirection = "Yan/Alt",OutputDiametre = "Q50",Price =30.00 , Stock =25 , IsApproved =true , CategoryId = 3,IsHome = true,Image =""},
+                new Products(){ Name = "Duş Başlığı",ProductCode = "MIKS 660.360.60",Description = "Klasik Seri Plastik Duş Kanalı 360° Dirsek", DiametreandSize = "60 cm",OutputDirection = "Yan/Alt",OutputDiametre = "Q50",Price =32.00 , Stock =25 , IsApproved =true , CategoryId = 3,IsHome = true,Image =""},
+                new Products(){ Name = "Duş Başlığı",ProductCode = "MIKS 660.360.60",Description = "Klasik Seri Plastik Duş Kanalı 360° Dirsek", DiametreandSize = "60 cm",OutputDirection = "Yan/Alt",OutputDiametre = "Q50",Price =32.00 , Stock =25 , IsApproved =true , CategoryId = 3,IsHome = true,Image =""},
 
-              
+
 
 
             };
